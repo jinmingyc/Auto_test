@@ -1,5 +1,6 @@
 /.metadata/
 #编译结果文件
 report1/
+report/
 target/
 test-output/

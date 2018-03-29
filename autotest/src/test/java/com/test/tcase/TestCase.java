@@ -1,4 +1,4 @@
-package com.test.testcase;
+package com.test.tcase;
 
 import static org.testng.Assert.assertEquals;
 
@@ -22,7 +22,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.relevantcodes.extentreports.NetworkMode;
-import com.test.tcase.BaseTest;
+import com.test.testcase.BaseTest;
 import com.test.testnglistener.TestngExtentReportListener;
 import com.test.util.HttpClientManager;
 import com.test.util.HttpUtils;

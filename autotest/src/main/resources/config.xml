@@ -4,6 +4,7 @@
     <headers>
         <!-- 配置为自己的参数 -->
         <header name="apikey" value="123456"></header>
+        <header name="header1" value="value1"></header>
     </headers>
     <params>
     	<param name="test" value="value"></param>

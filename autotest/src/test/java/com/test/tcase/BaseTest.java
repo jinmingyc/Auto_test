@@ -1,7 +1,6 @@
-package com.test.testcase;
+package com.test.tcase;
 
 import org.apache.log4j.Logger;
-
 
 public class BaseTest {
 	

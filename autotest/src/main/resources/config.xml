@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <rootUrl>http://apis.baidu.com</rootUrl>
+    <rootUrl>https://api.douban.com/</rootUrl>
     <headers>
         <!-- 配置为自己的参数 -->
-        <header name="apikey" value="123456"></header>
-        <header name="header1" value="value1"></header>
+        <header name="Accept" value="text/html, application/xhtml+xml, */*"></header>
+        <header name="User-Agent" value="Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"></header>
+        <header name="Accept-Encoding" value="gzip, deflate"></header>
     </headers>
     <params>
     	<param name="test" value="value"></param>

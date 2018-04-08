@@ -104,6 +104,6 @@ public class DataBean {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return String.format("desc:%s,method:%s,url:%s,param:%s", this.desc, this.method, this.url, this.param);
+		return String.format("desc:%s,method:%s,url:%s,param:%s", this.desc, this.method, this.url, this.param,this.verify);
 	}
 }

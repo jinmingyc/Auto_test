@@ -14,11 +14,14 @@ import org.dom4j.io.SAXReader;
 public class ApiConfig {
 
 	private Map<String, String> headers = new HashMap<String, String>();
+	private String rootUrl;
 
 	public ApiConfig(String path) throws DocumentException {
 		SAXReader reader = new SAXReader();
 		Document document = reader.read(path);
 		Element rootElement = document.getRootElement();
+		
+		rootUrl = rootElement.element("rootUrl").getTextTrim();
 
 		@SuppressWarnings("unchecked")
 		List<Element> headerElements = rootElement.element("headers").elements("header");
@@ -31,6 +34,12 @@ public class ApiConfig {
 		return headers;
 	}
 
+	public String getRootUrl() {
+		// TODO Auto-generated method stub
+		return rootUrl;
+	}
+	
+	
 	// E:\git_hub\Auto_test\autotest\src\main\resources
 	public static void main(String[] args) throws DocumentException {
 		// TODO Auto-generated method stub
@@ -44,5 +53,7 @@ public class ApiConfig {
 		}
 
 	}
+
+	
 
 }

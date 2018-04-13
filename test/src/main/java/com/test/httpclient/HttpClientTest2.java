@@ -70,7 +70,7 @@ public class HttpClientTest2 {
 		httpClient = getHttpclient();
 		HttpPost httpPost = new HttpPost("http://172.26.14.234:8181/lsms/io/Terminal/login.do");
 
-		List<NameValuePair> list = new ArrayList<>();
+		List<NameValuePair> list = new ArrayList<NameValuePair>();
 		list.add(new BasicNameValuePair("s_echarts", "534809"));
 		list.add(new BasicNameValuePair("s_ajaxCallType", "true"));
 		list.add(new BasicNameValuePair("s_userName", "duanyan.gd"));

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<context:component-scan base-package="com.ycm.constrbeansbyannotation"></context:component-scan>
+
+	<bean id="bookdao" class="com.ycm.ioc.BookDAO"></bean>
+
+
+	<!-- 有参构造方法创建 -->
+	<bean id="stuJack" class="com.ycm.ioc.constrbeansbyxml.Student"
+		init-method="init" destroy-method="destroy">
+		<constructor-arg name="name" value="张百川">
+		</constructor-arg>
+		<constructor-arg name="height" value="180"></constructor-arg>
+	</bean>
+
+	<bean id="stuTom" class="com.ycm.ioc.constrbeansbyxml.Student">
+		<constructor-arg index="0" value="谢廷伟"></constructor-arg>
+		<constructor-arg index="1" value="160"></constructor-arg>
+	</bean>
+	<!-- 属性 -->
+	<bean name="zhuhai" class="com.ycm.ioc.constrbeansbyxml.Address">
+		<property name="country" value="中国"></property>
+		<property name="city" value="珠海"></property>
+	</bean>
+	<!-- 对象引用 -->
+	<bean id="rose" class="com.ycm.ioc.constrbeansbyxml.Student">
+		<constructor-arg name="name" value="玫瑰"></constructor-arg>
+		<constructor-arg name="height" value="170"></constructor-arg>
+		<constructor-arg name="address" ref="zhuhai"></constructor-arg>
+	</bean>
+
+
+	<!-- AOP exm1 -->
+	<bean id="helloWorldImpl1" class="com.ycm.aop.exm1.HelloWorldImpl1"></bean>
+	<bean id="helloWorldImpl2" class="com.ycm.aop.exm1.HelloWorldImpl2"></bean>
+	<bean id="timeHandler" class="com.ycm.aop.exm1.TimeHandler"></bean>
+	<bean id="logHandler" class="com.ycm.aop.exm1.LogHandler"></bean>
+
+	<aop:config>
+		<aop:aspect id="time" ref="timeHandler" order="1">
+			<aop:pointcut id="addTime"
+				expression="execution(* com.ycm.aop.exm1.HelloWorld.*(..))" />
+			<aop:before method="printTime" pointcut-ref="addTime" />
+			<aop:after method="printTime" pointcut-ref="addTime" />
+		</aop:aspect>
+
+		<aop:aspect id="log" ref="logHandler" order="2">
+			<aop:pointcut id="addLog"
+				expression="execution(* com.ycm.aop.exm1.HelloWorld.*(..))" />
+			<aop:before method="LogBefore" pointcut-ref="addLog" />
+			<aop:after method="LogAfter" pointcut-ref="addLog" />
+		</aop:aspect>
+	</aop:config>
+
+	<!-- AOP exm1 -->
+
+</beans>

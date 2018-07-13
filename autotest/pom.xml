@@ -71,7 +71,6 @@
 			<version>20180130</version>
 		</dependency>
 
-
 	</dependencies>
 
 	<build>
@@ -81,13 +80,27 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.21.0</version>
 				<configuration>
+
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			
 		</plugins>
 	</build>
 

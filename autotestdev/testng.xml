@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite" parallel="false">	
+	<listeners>
+    <!--2.4支持离线-->
+    <listener class-name="com.test.testnglistener.TestngExtentReportListener" />  
+    <!--3.15不支持离线--> 
+    <!--listener class-name="com.test.testnglistener.ExtentTestNGITestListener"/-->
+    <!--处理assert异常--> 
+     <listener class-name="com.test.testnglistener.AssertionListener" />
+  	</listeners>
+  
+  <test name="Test1">
+  	<parameter name="excelPath" value="E:\git_hub\Auto_test\autotestdev\src\main\resources\api-data.xls"></parameter>
+	<parameter name="sheetName" value="Sheet1"></parameter>
+   
+    <classes>  	
+      <class name="com.test.testcase.TestCase2"/>
+    </classes>
+  </test> 
+   
+</suite> 

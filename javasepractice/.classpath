@@ -32,5 +32,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="E:/oracle/product/10.2.0/client_3/jdbc/lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="D:/software/mysql-connector-java-5.1.39-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
